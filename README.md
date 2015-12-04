@@ -1,2 +1,2 @@
 # manuals
-Manuals
+Manuals for different packages.
