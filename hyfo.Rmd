@@ -44,9 +44,12 @@ Xu, Yuanchao(2015). hyfo: Hydrology and Climate Forecasting R Package for Data A
 * The functions end with `_anarbe` are the functions designed specially for some case in Spain, those functions mostly are about data collection of the anarbe catchment, which will be introduced in the end of this mannual.
 
 ##### Installation
-* You can go [here](http://yuanchao-xu.github.io/hyfo/) to download installation file, and use IDE like Rstudio to install from file, both `tar.gz` and `zip` formats are provided.
+* For released version
+```{r, eval=FALSE}
+  install.packages("hyfo")
+```
 
-* Also you can use the following code to install the latest version.
+* For development version.
 ```{r, eval=FALSE}
   install.packages('devtools')
   # Ignore the warning that Rtool is not installed, unless you want other function 
@@ -55,7 +58,7 @@ Xu, Yuanchao(2015). hyfo: Hydrology and Climate Forecasting R Package for Data A
   devtools::install_github('Yuanchao-Xu/hyfo')
 ```
 
-During the installation, if there is some error, you can just follow the error message and reinstall the package with error. The most common message is 
+During the installation of the development version, if there is some error, you can just follow the error message and reinstall the package with error. The most common message is 
 ```{r, eval = FALSE}
 cannot remove previously installed XXX package.
 or
@@ -63,6 +66,7 @@ error in installation of XXX package.
 ```
 If so, just use `install.pakcages('xxx')` to reinstall XXX package. And then reinstall hyfo again. Other errors can be solved by directly reinsalling hyfo.
 
+* You can also go [here](http://yuanchao-xu.github.io/hyfo/) to download installation file, and use IDE like Rstudio to install from file, both `tar.gz` and `zip` formats are provided.
 
 # 1. Hydrology
 
