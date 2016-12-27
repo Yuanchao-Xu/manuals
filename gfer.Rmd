@@ -1,0 +1,117 @@
+---
+title: '[gfer Easy Start](http://yuanchao-xu.github.io/gfer/)'
+author: '[Yuanchao Xu](https://dk.linkedin.com/in/xuyuanchao37)'
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+vignette: |
+  %\VignetteIndexEntry{gfer easy start} 
+  %\VignetteEngine{knitr::rmarkdown} 
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+**Official Website is [http://yuanchao-xu.github.io/gfer](http://yuanchao-xu.github.io/gfer), where manuals and more details can be found.**
+
+gfer is an R package, designed for green finance and environmental risk research. Focuses on data collecting and analyzing in green finance and environmental risk research and analysis. Main function includes environmental data collecting from official websites like MEP (Ministry of Environmental Protection of China, http://www.mep.gov.cn), water related projects identification and environmental data visualization.
+
+**If you feel gfer is of a little help, please cite it as following:**
+
+Yuanchao Xu (2016). gfer: Green Finance and Environmental Risk. R package version 0.1.3.
+  https://CRAN.R-project.org/package=gfer
+
+#### TIPS
+* Data collection part contains different reliable sources, e.g., Ministry of Environmental Protection, Ministry of Water Resource, etc.
+
+##### Installation
+* Released version, for beginners and normal users.
+```{r, eval = FALSE}
+  install.packages("gfer")
+```
+
+* Development version, for experienced users and those who are interested in investigating.
+```{r, eval = FALSE}
+  install.packages('devtools')
+  # Ignore the warning that Rtool is not installed, unless you want other #function from devtools.
+  # If you have "devtools" installed already, you just need to run the following code.
+  devtools::install_github('Yuanchao-Xu/gfer')
+```
+
+During the installation of the development version, if there is some error, you can just follow the error message and reinstall the package with error. The most common message is
+```{r, eval = FALSE}
+  cannot remove previously installed XXX package.
+  or
+  error in installation of XXX package.
+```
+If so, just use `install.pakcages('xxx')` to reinstall XXX package. And then reinstall hyfo again. Other errors can be solved by directly reinsalling hyfo.
+
+* You can also go [here](http://yuanchao-xu.github.io/gfer/) to download installation file, and use IDE like Rstudio to install from file, both `tar.gz` and `zip` formats are provided.
+
+
+# 1. Data Collection
+
+##### Note
+
+This part contains different reliable sources, which is included in the documentation of each function. If source needs to be checked, just type in `??functionname`.
+
+
+
+
+
+
+
+## 1.1 PPP library from Ministry of Finance of China
+
+Data comes from [PPP center](http://www.cpppc.org:8082/efmisweb/ppp/projectLibrary/toPPPList.do?projName=) established by the ministry of Finance of China.
+
+Just one line of code, setting up starting page and end page.
+
+```{r, eval = FALSE}
+library(gfer)#load the package.
+a <- getPPPList(1,3) #get the ppp projects from the 1st page to the 3rd page
+# then a can be write to a text file or excel file
+
+```
+
+
+
+
+
+
+
+
+
+
+
+## 1.2 Water quality data from MEP
+
+Data from [MEP data center](http://datacenter.mep.gov.cn/report/getCountGraph.do?type=runQianWater), the webpage contains data from different intersections in each catchment, including different water quality parameters.
+
+```{r, eval = FALSE}
+# get data from 1st station to 5th station of the 3rd week of 2016
+a <- getWaterQ_MEP_all(2016, 3, 1, 5)
+# then a can be write to a text file or excel file
+```
+
+
+
+
+
+
+
+
+
+
+## 1.3 CSR rating data from hexun 
+
+Data from [Hexun](http://stockdata.stock.hexun.com/zrbg/), Hexun provides different CSR ratings and reports from different companies of each year.
+```{r, eval = FALSE}
+a <- getCSRRating(1,3)
+# then a can be write to a text file or excel file
+```
+
